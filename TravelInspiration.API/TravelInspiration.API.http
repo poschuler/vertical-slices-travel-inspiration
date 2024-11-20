@@ -1,0 +1,84 @@
+@HostAddressRoot = https://localhost:7293
+
+GET {{HostAddressRoot}}/api/destinations?searchTerm=an
+Accept: application/json
+
+###
+GET {{HostAddressRoot}}/api/destinations
+Accept: application/json
+
+###
+GET {{HostAddressRoot}}/api/itineraries
+Accept: application/json
+
+###
+GET {{HostAddressRoot}}/api/itineraries?searchFor=five
+Accept: application/json
+
+###
+GET {{HostAddressRoot}}/api/itineraries/1/stops
+Accept: application/json
+
+###
+GET {{HostAddressRoot}}/api/itineraries/111/stops
+Accept: application/json
+
+###
+POST {{HostAddressRoot}}/api/itineraries/1/stops
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InBvc2NodWxlciIsInN1YiI6InBvc2NodWxlciIsImp0aSI6IjMzNjBjYjNiIiwic2NvcGUiOiJ3cml0ZSIsImF1ZCI6InRyYXZlbGluc3BpcmF0aW9uLWFwaSIsIm5iZiI6MTczMjExNjkyNCwiZXhwIjoxNzQwMDY1NzI0LCJpYXQiOjE3MzIxMTY5MjUsImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ.ZmaS69lzxMrNMkXJvQsaAaiqPXEIh4mFLjDk0LFwah8
+
+{
+  "name": "A stop for testing",
+  "imageUri": "https://localhost:7293/images/stopfortesting.jpg"
+}
+
+###
+POST {{HostAddressRoot}}/api/itineraries/1/stops
+Accept: application/json
+Content-Type: application/json
+
+{
+  "imageUri": "https://localhost:7293/images/stopfortesting.jpg"
+}
+
+###
+POST {{HostAddressRoot}}/api/itineraries/1/stops
+Accept: application/json
+Content-Type: application/json
+
+{
+  "imageUri": "thisisnotvalid"
+}
+
+###
+PUT {{HostAddressRoot}}/api/itineraries/1/stops/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "An updated name"
+}
+
+###
+GET {{HostAddressRoot}}/api/itineraries
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InBvc2NodWxlciIsInN1YiI6InBvc2NodWxlciIsImp0aSI6IjQ5Mzg0YjYiLCJhdWQiOiJ0cmF2ZWxpbnNwaXJhdGlvbi1hcGkiLCJuYmYiOjE3MzIwNTI1MTcsImV4cCI6MTc0MDAwMTMxNywiaWF0IjoxNzMyMDUyNTE4LCJpc3MiOiJkb3RuZXQtdXNlci1qd3RzIn0.c9qxRiovPlM37Dm4cF8HmeLHRJYsTpuJ8XrD3GprSo8
+
+
+###
+POST {{HostAddressRoot}}/api/itineraries/1/stops
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InBvc2NodWxlciIsInN1YiI6InBvc2NodWxlciIsImp0aSI6IjVkZDg3OTFiIiwiYXVkIjoidHJhdmVsaW5zcGlyYXRpb24tYXBpIiwibmJmIjoxNzMyMTE2MzgyLCJleHAiOjE3NDAwNjUxODIsImlhdCI6MTczMjExNjM4MiwiaXNzIjoiZG90bmV0LXVzZXItand0cyJ9.RU9i3qbaGALUDClgbrFInFIv3SI6wIdeIjs-1DCrBjI
+
+{
+  "name": "A stop for testing",
+  "imageUri": "https://localhost:7293/images/stopfortesting.jpg"
+}
+
+###
+GET {{HostAddressRoot}}/api/itineraries
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InBvc2NodWxlciIsInN1YiI6InBvc2NodWxlciIsImp0aSI6ImFmZmQ5ZTQ1IiwiZmVhdHVyZSI6ImdldC1pdGluZXJhcmllcyIsImF1ZCI6InRyYXZlbGluc3BpcmF0aW9uLWFwaSIsIm5iZiI6MTczMjExNjQ5NywiZXhwIjoxNzQwMDY1Mjk3LCJpYXQiOjE3MzIxMTY0OTcsImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ.B2su1kCX3v1hNdyuTrsmDs4KmjCLq3AfeAJBZaJX2-U
